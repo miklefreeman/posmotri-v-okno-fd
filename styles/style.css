@@ -19,7 +19,6 @@ body {
   align-items: flex-end; /* Прижимаем контент к низу */
   min-height: 100vh;
   inline-size: 1200px;
-  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -30,7 +29,7 @@ body {
 
 .content {
   display: grid;
-  grid-template-columns: minmax(auto, 711px) 30px minmax(auto, 456px);
+  grid-template-columns: 711px 399px;
   grid-template-areas: "result-area . details-area";
   max-inline-size: 1140px;
   margin-top: 98px;
@@ -69,6 +68,8 @@ body {
   align-items: flex-start; /* Прижатие к началу контейнера */
   gap: 40px; /* Отступ между элементами формы */
 }
+
+
 
 .search-form__fieldset {
    border: none;
@@ -213,11 +214,11 @@ flex: 1 1 399px;
 
 
 .content__list {
-  position: relative;
-  overflow-y: scroll;
-  block-size: 300px;
-  /*display: flex;*/
-  /*flex-direction: column;*/
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   gap: 30px;
 }
 
@@ -270,6 +271,7 @@ background-color: #545050;
 
 .content__video-card-description-container {
  flex-grow: 1;
+    flex-basis: 0;
 }
 
 .content__video-card-title {
