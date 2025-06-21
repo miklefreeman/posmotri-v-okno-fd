@@ -35,8 +35,6 @@ body {
   margin-top: 98px;
   gap: 16px;
 }
-
-
 /* Секция с результатами */
 .result {
    flex: 1 1 711px;
