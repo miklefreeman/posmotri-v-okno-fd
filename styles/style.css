@@ -272,8 +272,6 @@ background-color: #545050;
   outline:1px solid #fff;
 }
 
-
-
 .content__video-card {
   display: flex;
   flex-direction: row; /* Элементы в строку */
