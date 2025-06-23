@@ -32,17 +32,19 @@ body {
   grid-template-columns: 711px 399px;
   grid-template-areas: "result-area . details-area";
   max-inline-size: 1140px;
-  margin-top: 98px;
-  gap: 16px;
+  margin: 133px 30px;
+  gap: 30px;
+  align-items: end;
 }
 
 /* Секция с результатами */
 .result {
-   flex: 1 1 711px;
+  flex: 1 1 711px;
   max-inline-size: 711px;
 }
 
 .result__video-container {
+  margin-top: 78px;
   position: relative;
   width: 711px;
   height: 386px;
@@ -64,18 +66,19 @@ body {
   display: flex;
   flex-direction: row; /* Элементы в строку */
   justify-content: space-between; /* Равномерное распределение */
-  align-items: flex-start; /* Прижатие к началу контейнера */
+  align-items: end; /* Прижатие к началу контейнера */
   gap: 40px; /* Отступ между элементами формы */
 }
 
-
-
 .search-form__fieldset {
+  flex-grow: 0;
    border: none;
   margin: 0;
   padding: 0;
   flex-grow: 1; /* Растягиваем на доступное пространство */
 }
+
+
 
 .search-form__fieldset:last-child {
   flex-grow: 0; /* Для последнего fieldset отменяем растягивание */
@@ -83,13 +86,13 @@ body {
 
 .search-form__fieldset-title {
   font-size: 18px;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
   font-weight: 600;
 }
 
 .search-form__textfield {
- width: 100%;
-  padding: 12px 15px;
+  width: 100%;
+  padding: 2.5px 0 2.5px 0;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
@@ -97,6 +100,12 @@ body {
   background-color: transparent;
   color: white;
   border-color: white;
+}
+
+.search-form__fieldset_city {
+  border: none;
+  border-bottom: solid rgba(255, 255, 255, 0.7) 1px;
+  flex-grow: 2;
 }
 
 .search-form__textfield:focus {
@@ -149,7 +158,7 @@ body {
 
 /* Кнопки */
 .button {
-   padding: 12px 24px;
+  padding: 6px 73px;
   background-color: transparent;
   color: white;
   border: 1px solid white;
@@ -179,6 +188,7 @@ body {
 }
 
 .search-form__submit-button {
+  flex-grow: 3;
  align-self: flex-end;
   margin-top: auto;
 }
@@ -195,7 +205,7 @@ flex: 1 1 399px;
 .title {
   font-size: 75px;
   line-height: 0.94;
-  margin-bottom: 48px; /* Отступ между заголовком и списком */
+  margin-bottom: 26px; /* Отступ между заголовком и списком */
   font-weight: 700;
   text-transform: uppercase;
   font-family: 'Oswald', sans-serif;
@@ -206,10 +216,12 @@ flex: 1 1 399px;
   color: #545050;
 }
 
-/*.content__list-container {
- flex-grow: 1;
-  overflow-y: auto;
-  height: 298px; /* Фиксированная высота для скролла */
+.content__list-container {
+  flex-grow: 1;
+  overflow-y: scroll;
+  overflow-x: hidden ;
+  height: 298px; 
+}
 
 
 .content__list {
@@ -253,6 +265,7 @@ background-color: #545050;
 
 .content__list-item {
   padding: 0 2px;
+  gap: 1;
 }
 
 .content__card-link:focus-visible {
@@ -262,19 +275,21 @@ background-color: #545050;
 
 
 .content__video-card {
-   display: flex;
+  display: flex;
   flex-direction: row; /* Элементы в строку */
   align-items: flex-start; /* Прижатие к началу по дополнительной оси */
   gap: 15px;
 }
 
 .content__video-card-description-container {
- flex-grow: 1;
-    flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 .content__video-card-title {
- margin: 12px 0 6px 13px;
   font-size: 30px;
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
@@ -284,12 +299,13 @@ background-color: #545050;
 
 .content__video-card-description {
   margin: 0;
-  font-size: 14px;
-  color: #666;
+  font-size: 18px;
+  font-family: "Fira Sans Condensed";
+  color: #ffffff;
 }
 
 .content__video-card-thumbnail {
-   width: 186px;
+  width: 194px;
   height: 103px;
   object-fit: cover;
   object-position: center;
