@@ -1,2 +1,3 @@
-yandex-praktikum/posmotri-v-okno-fd
-Учебный проект второго спринта. Дописание чюжого кода. Пропиываем стили, не вмешиваясь в html код.
+https://github.com/miklefreeman/posmotri-v-okno-fd.git
+
+
