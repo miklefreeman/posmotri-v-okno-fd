@@ -82,7 +82,6 @@ body {
 }
 
 
-
 .search-form__fieldset:last-child {
   flex-grow: 0; /* Для последнего fieldset отменяем растягивание */
 }
