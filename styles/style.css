@@ -9,22 +9,22 @@ html {
 }
 
 body {
-  min-height: 100vh;
-  margin: 0; /*удоляем стандартные отступы для бади */
+  margin: 0;
+  /*удоляем стандартные отступы для бади */
 }
 
-.page {  /*основной центрирующий контейнер*/
+.page {
+  /*основной центрирующий контейнер*/
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* Прижимаем контент к низу */
+  align-items: center;
   min-height: 100vh;
   inline-size: 1200px;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  padding-bottom: 60px; /* Отступ снизу */
 }
 
 .content {
@@ -32,7 +32,7 @@ body {
   grid-template-columns: 711px 399px;
   grid-template-areas: "result-area . details-area";
   max-inline-size: 1140px;
-  margin: 133px 30px;
+  margin: 10px 10px;
   gap: 30px;
   align-items: end;
 }
@@ -44,15 +44,15 @@ body {
 }
 
 .result__video-container {
-  margin-top: 78px;
   position: relative;
   width: 711px;
   height: 386px;
-  margin-bottom: 16px; /* Отступ снизу */
+  margin-bottom: 16px;
+  /* Отступ снизу */
 }
 
 .result__video {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -64,112 +64,113 @@ body {
 /* Форма поиска */
 .search-form {
   display: flex;
-  flex-direction: row; /* Элементы в строку */
-  justify-content: space-between; /* Равномерное распределение */
-  align-items: end; /* Прижатие к началу контейнера */
-  gap: 40px; /* Отступ между элементами формы */
-  
+  flex-direction: row;
+  /* Элементы в строку */
+  justify-content: space-between;
+  /* Равномерное распределение */
+  align-items: end;
+  /* Прижатие к началу контейнера */
+  gap: 40px;
+  /* Отступ между элементами формы */
 }
 
 .search-form__fieldset {
   width: 225px;
-  height: 54px;
+  justify-content: space-between;
+  gap: 40px;
   flex-grow: 0;
-   border: none;
+  border: none;
   margin: 0;
   padding: 0;
-  flex-grow: 2; /* Растягиваем на доступное пространство */
-}
-
-
-.search-form__fieldset:last-child {
-  flex-grow: 0; /* Для последнего fieldset отменяем растягивание */
+  /* Растягиваем на доступное пространство */
 }
 
 .search-form__fieldset-title {
   font-size: 18px;
-  height: 19px;
   margin-bottom: 5px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .search-form__textfield {
+  /* Текстовое выравнивание */
+  text-align: left;
+  /* Явное выравнивание по левому краю */
+  direction: ltr;
+  /* Гарантирует LTR-направление текста */
+  /* Границы */
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   border-right: 1px solid transparent;
   border-left: 1px solid transparent;
+
+  /* Стилизация */
   background-color: #1b1919;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  color: #fff;
+  font-family: "Fira Sans Condensed", sans-serif;
+  color: #ffffff 70%;
   font-size: 18px;
   font-weight: 400;
-  min-width: 225px;
-  appearance: none;
-  padding: 2.5px 7px;
-  
-}
 
-/*.search-form__fieldset_city {
-  border: none;
-  border-bottom: solid rgba(255, 255, 255, 0.7) 1px;
-  flex-grow: 2;
-} */
+  /* Размеры и отступы */
+  min-width: 225px;
+  padding: 1px 0;
+  /* Увеличенные отступы для удобства */
+  appearance: none;
+
+  /* Для длинного текста */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .search-form__textfield:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: #ffffff;
 }
 
 .search-form__checkbox-list {
   display: flex;
+  margin-bottom: 5px;
   gap: 15px;
+  align-items: center;
+}
+
+.search-form__pseudo-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: #ffffff;
+  display: inline-block;
 }
 
 .search-form__label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
   cursor: pointer;
 }
 
-.search-form__pseudo-checkbox {
-  display: inline-block;
-  width: 19px;
-  height: 19px;
-  border: 1px solid #ffffff;
-  border-radius: none;
-  position: relative;
-  transition: all 0.2s;
-}
-
-.search-form__checkbox:checked + .search-form__pseudo-checkbox {
-  background-color: #ffffff;
-  border-color: #ffffff;
-}
-
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
-  content: '';
-  position: absolute;
-  left: 5px;
-  top: 1px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-
 .search-form__label-text {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* Кнопки */
 .button {
-  padding: 6px 73px;
+  padding: 6px 73.5px;
   background-color: transparent;
   color: white;
   border: 1px solid white;
-  border-radius: 4px;
+  border-radius: 1px;
   font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -178,7 +179,7 @@ body {
 }
 
 .button:hover {
-   text-decoration: underline;
+  text-decoration: underline;
 }
 
 .button:active {
@@ -203,13 +204,13 @@ body {
 
 .search-form__submit-button {
   flex-grow: 3;
- align-self: flex-end;
+  align-self: flex-end;
   margin-top: auto;
 }
 
 /* Секция с деталями */
 .content__details {
-flex: 1 1 399px;
+  flex: 1 1 399px;
   max-inline-size: 399px;
   display: flex;
   flex-direction: column;
@@ -219,11 +220,11 @@ flex: 1 1 399px;
 .title {
   font-size: 75px;
   line-height: 0.94;
-  margin-bottom: 26px; /* Отступ между заголовком и списком */
+  margin-bottom: 26px;
+  /* Отступ между заголовком и списком */
   font-weight: 700;
   text-transform: uppercase;
-  font-family: 'Oswald', sans-serif;
-  
+  font-family: "Oswald", sans-serif;
 }
 
 .content__accent {
@@ -233,10 +234,9 @@ flex: 1 1 399px;
 .content__list-container {
   flex-grow: 1;
   overflow-y: scroll;
-  overflow-x: hidden ;
-  height: 298px; 
+  overflow-x: hidden;
+  height: 298px;
 }
-
 
 .content__list {
   list-style: none;
@@ -246,10 +246,6 @@ flex: 1 1 399px;
   flex-direction: column;
   gap: 30px;
 }
-
-/*.content__list-item {
-    display: flex;
-}*/
 
 .content__card-link {
   text-decoration: none;
@@ -262,14 +258,10 @@ flex: 1 1 399px;
   background-color: #545050;
 }
 
-/*.content__video-card:active {
-background-color: #545050;
-}*/
-
 .content__card-link:hover {
   text-decoration: underline;
   text-underline-offset: 0.2em;
-  text-decoration-thickness:1px ;
+  text-decoration-thickness: 1px;
   text-decoration-skip-ink: none;
 }
 
@@ -283,13 +275,15 @@ background-color: #545050;
 }
 
 .content__card-link:focus-visible {
-  outline:1px solid #fff;
+  outline: 1px solid #fff;
 }
 
 .content__video-card {
   display: flex;
-  flex-direction: row; /* Элементы в строку */
-  align-items: flex-start; /* Прижатие к началу по дополнительной оси */
+  flex-direction: row;
+  /* Элементы в строку */
+  align-items: flex-start;
+  /* Прижатие к началу по дополнительной оси */
   gap: 15px;
 }
 
@@ -303,16 +297,24 @@ background-color: #545050;
 
 .content__video-card-title {
   font-size: 30px;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   line-height: 1;
+  white-space: nowrap;
+  /* Запрет переноса */
+  overflow: hidden;
+  /* Обрезка выходящего текста */
+  text-overflow: ellipsis;
+  /* Многоточие вместо обрезки */
+  width: 150px;
+  /* Обязательно нужно ограничение ширины */
 }
 
 .content__video-card-description {
   margin: 0;
   font-size: 18px;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed" sans-serif;
   color: #ffffff;
 }
 
@@ -335,27 +337,16 @@ background-color: #545050;
   clip: rect(0 0 0 0);
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-  .content {
-    grid-template-columns: 1fr;
-  }
-  
-  .title {
-    font-size: 36px;
-  }
-}
-
 @media (max-width: 480px) {
   .search-form__checkbox-list {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .content__video-card {
     flex-direction: column;
   }
-  
+
   .content__video-card-thumbnail {
     width: 100%;
     height: auto;
@@ -381,8 +372,6 @@ ol {
   list-style: none;
 }
 
-
-
 /* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
@@ -393,5 +382,5 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
