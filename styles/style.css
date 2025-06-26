@@ -92,31 +92,20 @@ body {
 }
 
 .search-form__textfield {
-  /* Текстовое выравнивание */
   text-align: left;
-  /* Явное выравнивание по левому краю */
   direction: ltr;
-  /* Гарантирует LTR-направление текста */
-  /* Границы */
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   border-right: 1px solid transparent;
   border-left: 1px solid transparent;
-
-  /* Стилизация */
   background-color: #1b1919;
   font-family: "Fira Sans Condensed", sans-serif;
-  color: #ffffff 70%;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 18px;
   font-weight: 400;
-
-  /* Размеры и отступы */
   min-width: 225px;
   padding: 1px 0;
-  /* Увеличенные отступы для удобства */
   appearance: none;
-
-  /* Для длинного текста */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -145,7 +134,7 @@ body {
   cursor: pointer;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+.search-form__checkbox:checked+.search-form__pseudo-checkbox::after {
   content: "";
   width: 15px;
   height: 15px;
