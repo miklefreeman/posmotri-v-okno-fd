@@ -113,6 +113,10 @@ body {
   border-color: #ffffff;
 }
 
+.search-form__textfield:hover {
+  text-decoration: none;
+}
+
 .search-form__checkbox-list {
   display: flex;
   margin-bottom: 5px;
